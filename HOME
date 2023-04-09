@@ -1,0 +1,55 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class ChatHomeScreen extends JFrame {
+    private JLabel titleLabel;
+    private JButton chatButton;
+    private JButton settingsButton;
+    
+    public ChatHomeScreen() {
+        // Set up the JFrame
+        super("Chat Home Screen");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(400, 300);
+        setResizable(false);
+        
+        // Set up the title label
+        titleLabel = new JLabel("Welcome to the Chat App!");
+        titleLabel.setFont(new Font("Arial", Font.BOLD, 24));
+        titleLabel.setHorizontalAlignment(JLabel.CENTER);
+        add(titleLabel, BorderLayout.NORTH);
+        
+        // Set up the chat button
+        chatButton = new JButton("Chat");
+        chatButton.setFont(new Font("Arial", Font.PLAIN, 16));
+        chatButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                // Code to open the chat window goes here
+            }
+        });
+        
+        // Set up the settings button
+        settingsButton = new JButton("Settings");
+        settingsButton.setFont(new Font("Arial", Font.PLAIN, 16));
+        settingsButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                // Code to open the settings window goes here
+            }
+        });
+        
+        // Add the buttons to the center of the JFrame
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.setLayout(new GridLayout(2, 1, 20, 20));
+        buttonPanel.add(chatButton);
+        buttonPanel.add(settingsButton);
+        add(buttonPanel, BorderLayout.CENTER);
+        
+        // Show the JFrame
+        setVisible(true);
+    }
+    
+    public static void main(String[] args) {
+        new ChatHomeScreen();
+    }
+}
